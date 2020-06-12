@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+	<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+	<link href="https://fonts.googleapis.com/css2?family=Crete+Round&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<title>Quick News</title>
+</head>
+
+<body>
+	<h1>Quick News</h1>
+	<div class="menu" id="menu">
+		<a href="{{ url_for('tout') }}"> <p class="item" id=tout>Tout</p> </a>
+		<a href="{{ url_for('business') }}"> <p class="item" id=business>Business</p> </a>
+		<a href="{{ url_for('divertissement') }}"> <p class="item" id=divertissement>Divertissement</p> </a>
+		<a href="{{ url_for('santé') }}"> <p class="item" id=santé>Santé</p> </a>
+		<a href="{{ url_for('science') }}"> <p class="item">Science</p> </a>
+		<a href="{{ url_for('sport') }}"> <p class="item">Sport</p> </a>
+		<a href="{{ url_for('technologie') }}"> <p class="item">Technologie</p> </a>
+	</div>
+
+	{%for i in range(0, 10, 2)%}
+	<div class=ensemble>
+
+
+		<div class=article>
+			<a target=_blank rel="noopener noreferrer" href="{{link[i]}}"><h2 class="title">{{title[i]}}</h2></a>
+			<img src="{{image[i]}}">
+			<p class=description>{{description[i]}}</p>
+		</div>
+
+		<div class=article>
+			<a target=_blank rel="noopener noreferrer" href={{link[i+1]}}><h2 class="title">{{title[i+1]}}</h2></a>
+			<img src="{{image[i+1]}}">
+			<p class="description">{{description[i+1]}}</p>
+		</div></a>
+
+	</div>
+	{%endfor%}
+</body>
+</html>
