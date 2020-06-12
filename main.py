@@ -32,7 +32,7 @@ def tout():
             image.append(content['articles'][i]['urlToImage'])
             description.append(content['articles'][i]['description'])
             link.append(content['articles'][i]['url'])
-        else:  # ||| Mettre cette partie pour tous les thèmes et faire i + 11 pour minimiser le double |||
+        else:
             title.append(content['articles'][i+5]['title'])
             image.append(content['articles'][i+5]['urlToImage'])
             description.append(content['articles'][i+5]['description'])
